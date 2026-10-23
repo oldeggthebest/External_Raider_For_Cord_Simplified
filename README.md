@@ -1,19 +1,6 @@
-# Kiox Clean
+# kiox v2s source code
 
 A external raid bot
-
-## Setup
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env        # then put your bot token in .env
-# edit config.json (prefix, raid counts, sync_guilds, ...)
-python main.py
-```
-
-The token only goes in `.env` (`DISCORD_TOKEN`). `config.json` is where you need to config and shi
 
 ## Structure
 
