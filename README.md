@@ -1,6 +1,6 @@
 # Kiox Clean
 
-A user-installable Discord raid bot — its commands work everywhere: servers, DMs, group DMs.
+A external raid bot
 
 ## Setup
 
@@ -13,7 +13,7 @@ cp .env.example .env        # then put your bot token in .env
 python main.py
 ```
 
-The token only goes in `.env` (`DISCORD_TOKEN`). `config.json` is settings, no secrets.
+The token only goes in `.env` (`DISCORD_TOKEN`). `config.json` is where you need to config and shi
 
 ## Structure
 
@@ -32,4 +32,4 @@ The token only goes in `.env` (`DISCORD_TOKEN`). `config.json` is settings, no s
 | Spam & ghost | `massping`, `ghost-ping`, `massghostping`, `say`, `ghost-say`, `button-say`, `fake-nitro`, `rickroll-spam`, `lagger`, `fake-message` |
 | Tools | `ping`, `uptime`, `invite`, `help`, `server-info`, `whois`, `check`, `blame`, `fake-ip`, `analytics` |
 
-Every command is user-installable, so they all work in servers, DMs and group DMs without adding the bot anywhere.
+yea i used ai don min it
