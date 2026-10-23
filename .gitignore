@@ -1,0 +1,5 @@
+.env
+__pycache__/
+*.pyc
+core/blank_mesg.txt
+.directory

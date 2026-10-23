@@ -1,0 +1,15 @@
+{
+  "client_id": "1542846043710955550",
+  "prefix": "!",
+  "raid_message_file": "raid_message.txt",
+  "all_raid_tokens_file": "all_raid_tokens.json",
+  "fonts_dir": "fonts",
+  "raid_count": 10,
+  "concurrency": 200,
+  "farm_delay": 0.15,
+  "pace_delay": 0.4,
+  "request_timeout": 8,
+  "max_retries": 12,
+  "sync_guilds": [],
+  "invite": "discord.gg/5NpewnDman"
+}
