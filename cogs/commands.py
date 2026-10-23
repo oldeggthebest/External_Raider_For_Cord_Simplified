@@ -30,6 +30,11 @@ _WEBHOOK = "https://discord.com/api/v10/webhooks/{app}/{token}"
 # lagger picks an ugly pile of these to choke the chat with
 _CRASHER_EMOJIS = ['🥈', '😙', '🜸', '👤', '🐲', '🛬', '🛺', '🏝', '🌕', '👱', '📼', '🏱', '🍧', '🤸', '🔄', '🧚', '🦦', '🛣', '\U0001f779', '🖎', '🖡', '🎝', '🌿', '🙃', '😃', '📟', '🌞', '🕘', '👦', '🧥', '😣', '🍘', '🍣', '🤑', '🖤', '😝', '🥌', '🦃', '🦷', '🝡', '🎦', '🛓', '🍒', '🎲', '📖', '🐒', '♲', '🏜', '🐆', '🎊', '💐', '🜺', '📂', '🔤', '📷', '👡', '🌒', '🐣', '🧼', '🌝', '📒', '🜂', '🎧', '🜶', '🚶', '🧽', '🍷', '🗕', '🗾', '🕂', '😪', '🦑', '📋', '🤖', '🗘', '🎎', '🝊', '🕋', '🔁', '🤅', '🚬', '🔭', '🝽', '🔏', '🍑', '🤢', '🦋', '👟', '👈', '🚯', '💻', '💚', '🌤', '🖸', '🧗', '😸', '🝈', '🖑', '\U0001f6d8', '🤿', '🤏', '🤥', '🗓', '🦝', '🍤', '😫', '🕴', '😄', '📘', '🏪', '🧋', '🥸', '🌢', '🥮', '🧈', '🖕', '📛', '🕪', '🐻', '🗵', '🍈', '🎯', '🚋', '🜕', '🧢', '🥪', '🔼', '🝍', '🌇', '🌜', '👍', '🔀', '🦻', '🌙', '🤾', '🌗', '🕧', '😧', '🧪', '📭', '🜅', '🏈', '🏒', '🦔', '🝠', '�', '🔑', '💀', '🐗', '🕲', '💑', '🦩', '🝳', '😭', '🖜', '🔒', '🕡', '🛄', '🌋', '🝏', '🏏', '🎱', '🚐', '🦍', '🕤', '📅', '🤀', '🐕', '🜳', '🥥', '😲', '🙎', '🌆', '🏄', '🦧', '🏔', '🦗', '🐅', '🖙', '👙', '😱', '🗏', '📽', '📙', '🥲', '🕃', '😜', '🦊', '🜞', '🔪', '🥂', '💁', '🥒', '🧮', '🐾', '🚝', '🎼', '🦭', '🤕', '💭', '🗁', '💲', '🖬', '🙀', '🐎', '🦙', '🥤', '🚌', '🜽', '💔', '🖶', '🍦', '📜', '🎑', '💃', '🧰', '🚷', '📕', '腳', '\U0001f6ef', '🖯', '🧐', '🕟', '🎁', '🏹', '🎤', '🥕', '🤤', '🗱', '🝬', '📎', '🛝', '😩', '💼', '🌎', '🍩', '🌈', '🎕', '🍴', '🐄', '🤔', '🎘', '👢', '🜻', '💈', '🛇', '🥘', '🦤', '🥦', '🍗', '📣', '💣', '🐼', '🚿', '🍥', '🍨', '🕛', '🎮', '💒', '🗪', '🗻', '👃', '🕳', '🛤', '🎳', '🎺', '🔃', '🔕', '💥', '🤄', '👎', '🔩', '💴', '🖥', '🥐', '😐', '🔶', '🗴', '🚸', '📤', '🜀', '🤣', '🛔', '😶', '🍡', '🖢', '🛳', '😂', '🜱', '🧏', '🤞', '🗠', '🧱', '🔴', '🜾', '🜫', '🐘', '🧧', '🐊', '🐙', '🏸', '💹', '\U0001f6ed', '🦉', '🌍', '🖝', '💬', '🤙', '📍', '🜈', '🚴', '🝖', '😏', '🚺', '🥧', '🜓', '🤂', '🔷', '🍛', '🎥', '🚟', '🎅', '💄', '🜉', '🚧', '🜨', '🛅', '孔', '雀', '🖈', '🦳', '🔮', '🎭', '🏳', '😗', '🕆', '🎩', '👕', '🗛', '🥞', '📲', '💯', '🕗', '🝲', '🏞', '🧟', '🜏', '🎐', '😾', '💸', '🜎', '🕄', '🖏', '👸', '👛', '📯', '🕙', '\U0001f6d9', '🌬', '🦕', '🐮', '🌔', '🥆', '🎗', '🐐', '🕿', '🖅', '👰', '🗦', '🌳', '🐶', '🜧', '🤧', '🗫', '🐖', '🧜', '🥚', '🤳', '🙄', '🎛', '🔽', '🤐', '🦼', '🖆', '🍚', '🙉', '🕓', '🚄', '🏦', '🦾', '🎋', '🝒', '💫', '🝛', '🎇', '💍', '🥍', '👴', '🎄', '🚳', '💰', '😕', '🍁', '🗥', '🜔', '🚤', '👻', '🕎', '🎵', '💇', '🖌', '🙊', '🍅', '🔨', '🥠', '👪', '🧹', '🌣', '🥹', '🕌', '🤭', '🚏', '💽', '😺', '🧫', '🐽', '📦', '🗝', '🧬', '🖱', '🚍', '🚭', '🏘', '🗲', '🗢', '🗶', '🛌', '🐉', '🏙', '🦚', '🔋', '🖚', '🝦', '🛜', '🎣', '🤽', '🜝', '🅢', '🕭', '🜡', '🌯', '😡', '😌', '🔗', '🍰', '👝', '🖁', '🎚', '🗉', '🗳', '🍄', '🎃', '🦽', '🍵', '🝰', '🍎', '🧨', '🔚', '👖', '🌛', '🎉', '🤹', '📚', '🜹', '🐋', '🛋', '🗊', '🧿', '🦛', '🤫', '🐳', '😤', '📸', '🥜', '夫', '妻', '🍻', '🝔', '🎷', '🜑', '🧄', '🗌', '🕑', '🕁', '🔡', '🖻', '🐵', '💿', '🝫', '🏽', '👭', '\U0001f778', '🔞', '🧾', '🚑', '📃', '🎟', '🦱', '🝨', '🤒', '🎔', '🐪', '🧺', '🧀', '👩', '🗍', '🙋', '🍕', '🚵', '🥝', '🥬', '💉', '🛷', '👒', '💡', '🌩', '👇', '🏊', '💝', '🐁', '🐱', '👓', '🗃', '😨', '🝤', '🖠', '🝮', '🔻', '🍼', '🦡', '🕝', '🏤', '🦨', '🏌', '🕅', '🎈', '喳', '箱', '🗄', '🧖', '🚅', '🜮', '🝿', '🛑', '😬', '🗣', '🐹', '🥰', '🍾', '🦯', '🙏', '🍟', '🐯', '🏗', '🝘', '🍢', '🔾', '🥭', '🥎', '🎨', '🥡', '🗸', '🌄', '🕼', '🥻', '🔂', '💂', '🛆', '😵', '🕊', '🜵', '🏍', '👅', '🍽', '🖉', '🏐', '🧭', '🏕', '🗰', '🏨', '🗒', '🝆', '📻', '🝉', '🛞', '🥩', '🥵', '🌵', '眼', '镜', '🦰', '🚲', '🖭', '🔓', '😀', '🔛', '📳', '🥫', '🝋', '🤦', '👀', '🥺', '🜿', '🏀', '🖋', '🚞', '🤇', '🚽', '🥼', '🎠', '😊', '🚇', '🧔', '👬', '🛖', '🕬', '🐿', '☖', '🚉', '🚙', '😋', '🦘', '😿', '📹', '🜘', '👫', '🔅', '🤉', '🕈', '🔫', '💆', '🍹', '💎', '💌', '👜', '😰', '🎏', '🜄', '🜌', '🎬', '🌶', '🧵', '🤚', '🖮', '🌡', '🚗', '💖', '🌑', '🧸', '📱', '🔸', '📊', '🏑', '🕍', '🕶', '😮', '🕏', '🖘', '🝁', '🕽', '🜗', '🜇', '🎀', '🏟', '🝅', '🗯', '🍖', '🕱', '👺', '🌭', '🖇', '😍', '💨', '🜛', '💢', '🛀', '🏉', '🧃', '🏚', '😓', '🝄', '😆', '🗋', '🛢', '🦲', '👧', '🏥', '🦢', '🚾', '🏣', '💾', '🤴', '🥳', '📶', '👼', '🜤', '🎪', '🛲', '🚡', '🜚', '🗔', '🔹', '🐜', '🥁', '🤁', '🧷', '🧴', '🍮', '📠', '👗', '🤝', '🐺', '🕉', '🝎', '🜪', '🛠', '\U0001f6ee', '📀', '💺', '🍋', '🧍', '🐍', '🍉', '📌', '🗆', '🖟', '🍀', '🧡', '🧁', '👠', '🍫', '🏰', '👣', '👑', '📏', '🗀', '🧒', '🥑', '🌼', '🗟', '🏭', '🔬', '📰', '🖊', '🜩', '📆', '🙌', '🥅', '🗬', '🏶', '🥙', '🏆', '💕', '🤪', '🕰', '🚼', '🖀', '🛱', '🎶', '🝟', '🍺', '🖖', '🦪', '🥋', '🛟', '🔺', '🚮', '🧦', '🧕', '🧂', '🖞', '🔲', '🌱', '🚎', '🛎', '😁', '🕺', '🍔', '🍳', '🚛', '💱', '🧙', '🧎', '📬', '😦', '🏡', '🎻', '🍌', '😽', '🌻', '🥊', '🧛', '🦐', '🗗', '爵', '士', '📡', '🍍', '🖛', '🜒', '🚰', '🛰', '🐞', '🚦', '拒', '绝', '🥄', '🔢', '🍃', '🌴', '\U0001f6ff', '🝻', '🦌', '🥉', '🛈', '🌁', '🚊', '🝐', '🝾', '🐡', '🥔', '🤰', '🔊', '🤘', '🜷', '🏅', '🜯', '🝝', '🜜', '🥇', '🏋', '🥯', '🤬', '💷', '🦓', '🛃', '🛗', '🛸', '🖫', '🖐', '境', '😷', '🐰', '🍸', '🜣', '👐', '🌅', '🏷', '🕞', '🌟', '🖳', '🍙', '🥓', '🌨', '🗡', '📄', '🏎', '🎂', '🛹', '🚢', '🚕', '🕻', '🔍', '🤩', '🗚', '🏮', '🗩', '🖴', '🛶', '🝃', '👘', '🚀', '🌰', '🍭', '🧌', '🛧', '🕹', '🤼', '😯', '🤃', '🔖', '\U0001f6da', '🧉', '🕖', '🚘', '🗎', '🤈', '🏧', '🦆', '💙', '🦞', '🎿', '🍂', '🧑', '💳', '🐂', '🍇', '👚', '🔧', '🤌', '🎽', '🝼', '🎡', '🧆', '🎓', '🛐', '🚻', '🖣', '🕦', '🗂', '🌊', '🚹', '🥛', '🤲', '😹', '📗', '\U0001f6db', '🚪', '👉', '👿', '🌺', '🍬', '🕒', '🛁', '🥀', '📩', '🧲', '🎸', '🐸', '👔', '👥', '🐬', '🝗', '🛻', '\U0001f6fd', '🔎', '🙇', '🌫', '🦴', '🍓', '🥱', '🖲', '🛂', '🕢', '🛨', '🤶', '🕫', '🧓', '👾', '🎆', '🔌', '💓', '📁', '🗤', '🦸', '🛡', '🐝', '🍐', '🎖', '🌪', '学', '校', '🧠', '💋', '🥽', '🌲', '🏿', '🜟', '🖩', '🦬', '🐧', '🗞', '🗽', '🗮', '🍲', '🐟', '🖺', '🜥', '🝞', '🐥', '🕠', '🌖', '🕕', '🙁', '🚠', '🐔', '🤨', '👁', '🚣', '🌃', '🐛', '🦟', '🍪', '😖', '🜊', '💮', '运', '动', '员', '兄', '弟', '🌌', '🥃', '🝀', '🖰', '🌦', '🜬', '👂', '🧻', '📾', '🛥', '🝭', '👞', '🏖', '😇', '胤', '🥴', '🕀', '🗈', '👏', '🚨', '🦫', '📺', '🌾', '🦺', '🤓', '🗭', '🤋', '🐏', '🕸', '🧣', '🐦', '🍯', '💵', '📴', '🧘', '📞', '🖽', '☀', '☁', '☂', '☃', '☄', '★', '☆', '☇', '☈', '☉', '☊', '☋', '☌', '☍', '☎', '☏', '☐', '☑', '☒', '☓', '☔', '☕', '☗', '☘', '☙', '☚', '☛', '☜', '☝', '☞', '☟', '☠', '☡', '☢', '☣', '☤', '☥', '☦', '☧', '☨', '☩', '☪', '☫', '☬', '☭', '☮', '☯', '☰', '☱', '☲', '☳', '☴', '☵', '☶', '☷', '☸', '☹', '☺', '☻', '☼', '☽', '☾', '☿', '♀', '♁', '♂', '♃', '♄', '♅', '♆', '♇', '♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓', '♔', '♕', '♖', '♗', '♘', '♙', '♚', '♛', '♜', '♝', '♞', '♟', '♠', '♡', '♢', '♣', '♤', '♥', '♦', '♧', '♨', '♩', '♪', '♫', '♬', '♭', '♮', '♯', '♰', '♱', '♳', '♴', '♵', '♶', '♷', '♸', '♹', '♺', '♻', '♼', '♽', '♾', '♿', '⚀', '⚁', '⚂', '⚃', '⚄', '⚅', '⚆', '⚇', '⚈', '⚉', '⚊', '⚋', '⚌', '⚍', '⚎', '⚏', '⚐', '⚑', '⚒', '⚓', '⚔', '⚕', '⚖', '⚗', '⚘', '⚙', '⚚', '⚛', '⚜', '⚝', '⚞', '⚟', '⚠', '⚡', '⚢', '⚣', '⚤', '⚥', '⚦', '⚧', '⚨', '⚩', '⚪', '⚫', '⚬', '⚭', '⚮', '⚯', '⚰', '⚱', '⚲', '⚳', '⚴', '⚵', '⚶', '⚷', '⚸', '⚹', '⚺', '⚻', '⚼', '⚽', '⚾', '⚿', '⛀', '⛁', '⛂', '⛃', '⛄', '⛅', '⛆', '⛇', '⛈', '⛉', '⛊', '⛋', '⛌', '⛍', '⛎', '⛏', '⛐', '⛑', '⛒', '⛓', '⛔', '⛕', '⛖', '⛗', '⛘', '⛙', '⛚', '⛛', '⛜', '⛝', '⛞', '⛟', '⛠', '⛡', '⛢', '⛣', '⛤', '⛥', '⛦', '⛧', '⛨', '⛩', '⛪', '⛫', '⛬', '⛭', '⛮', '⛯', '⛰', '⛱', '⛲', '⛳', '⛴', '⛵', '⛶', '⛷', '⛸', '⛹', '⛺', '⛻', '⛼', '⛽', '⛾', '⛿', '⌀', '⌁', '⌂', '⌃', '⌄', '⌅', '⌆', '⌇', '⌈', '⌉', '⌊', '⌋', '⌌', '⌍', '⌎', '⌏', '⌐', '⌑', '⌒', '⌓', '⌔', '⌕', '⌖', '⌗', '⌘', '⌙', '⌚', '⌛', '⌜', '⌝', '⌞', '⌟', '⌠', '⌡', '⌢', '⌣', '⌤', '⌥', '⌦', '⌧', '⌨', '〈', '〉', '⌫', '⌬', '⌭', '⌮', '⌯', '⌰', '⌱', '⌲', '⌳', '⌴', '⌵', '⌶', '⌷', '⌸', '⌹', '⌺', '⌻', '⌼', '⌽', '⌾', '⌿', '⍀', '⍁', '⍂', '⍃', '⍄', '⍅', '⍆', '⍇', '⍈', '⍉', '⍊', '⍋', '⍌', '⍍', '⍎', '⍏', '⍐', '⍑', '⍒', '⍓', '⍔', '⍕', '⍖', '⍗', '⍘', '⍙', '⍚', '⍛', '⍜', '⍝', '⍞', '⍟', '⍠', '⍡', '⍢', '⍣', '⍤', '⍥', '⍦', '⍧', '⍨', '⍩', '⍪', '⍫', '⍬', '⍭', '⍮', '⍯', '⍰', '⍱', '⍲', '⍳', '⍴', '⍵', '⍶', '⍷', '⍸', '⍹', '⍺', '⍻', '⍼', '⍽', '⍾', '⍿', '⎀', '⎁', '⎂', '⎃', '⎄', '⎅', '⎆', '⎇', '⎈', '⎉', '⎊', '⎋', '⎌', '⎍', '⎎', '⎏', '⎐', '⎑', '⎒', '⎓', '⎔', '⎕', '⎖', '⎗', '⎘', '⎙', '⎚', '⎛', '⎜', '⎝', '⎞', '⎟', '⎠', '⎡', '⎢', '⎣', '⎤', '⎥', '⎦', '⎧', '⎨', '⎩', '⎪', '⎫', '⎬', '⎭', '⎮', '⎯', '⎰', '⎱', '⎲', '⎳', '⎴', '⎵', '⎶', '⎷', '⎸', '⎹', '⎺', '⎻', '⎼', '⎽', '⎾', '⎿', '⏀', '⏁', '⏂', '⏃', '⏄', '⏅', '⏆', '⏇', '⏈', '⏉', '⏊', '⏋', '⏌', '⏍', '⏎', '⏏', '⏐', '⏑', '⏒', '⏓', '⏔', '⏕', '⏖', '⏗', '⏘', '⏙', '⏚', '⏛', '⏜', '⏝', '⏞', '⏟', '⏠', '⏡', '⏢', '⏣', '⏤', '⏥', '⏦', '⏧', '⏨', '⏩', '⏪', '⏫', '⏬', '⏭', '⏮', '⏯', '⏰', '⏱', '⏲', '⏳', '⏴', '⏵', '⏶', '⏷', '⏸', '⏹', '⏺', '⏻', '⏼', '⏽', '⏾', '⏿', '℀', '℁', 'ℂ', '℃', '℄', '℅', '℆', 'ℇ', '℈', '℉', 'ℊ', 'ℋ', 'ℌ', 'ℍ', 'ℎ', 'ℏ', 'ℐ', 'ℑ', 'ℒ', 'ℓ', '℔', 'ℕ', '№', '℗', '℘', 'ℙ', 'ℚ', 'ℛ', 'ℜ', 'ℝ', '℞', '℟', '℠', '℡', '™', '℣', 'ℤ', '℥', 'Ω', '℧', 'ℨ', '℩', 'K', 'Å', 'ℬ', 'ℭ', '℮', 'ℯ', 'ℰ', 'ℱ', 'Ⅎ', 'ℳ', 'ℴ', 'ℵ', 'ℶ', 'ℷ', 'ℸ', 'ℹ', '℺', '℻', 'ℼ', 'ℽ', 'ℾ', 'ℿ', '⅀', '⅁', '⅂', '⅃', '⅄', 'ⅅ', 'ⅆ', 'ⅇ', 'ⅈ', 'ⅉ', '⅊', '⅋', '⅌', '⅍', 'ⅎ', '⅏', '✀', '✁', '✂', '✃', '✄', '✅', '✆', '✇', '✈', '✉', '✊', '✋', '✌', '✍', '✎', '✏', '✐', '✑', '✒', '✓', '✔', '✕', '✖', '✗', '✘', '✙', '✚', '✛', '✜', '✝', '✞', '✟', '✠', '✡', '✢', '✣', '✤', '✥', '✦', '✧', '✨', '✩', '✪', '✫', '✬', '✭', '✮', '✯', '✰', '✱', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '✽', '✾', '✿', '❀', '❁', '❂', '❃', '❄', '❅', '❆', '❇', '❈', '❉', '❊', '❋', '❌', '❍', '❎', '❏', '❐', '❑', '❒', '❓', '❔', '❕', '❖', '❗', '❘', '❙', '❚', '❛', '❜', '❝', '❞', '❟', '❠', '❡', '❢', '❣', '❤', '❥', '❦', '❧', '❨', '❩', '❪', '❫', '❬', '❭', '❮', '❯', '❰', '❱', '❲', '❳', '❴', '❵', '❶', '❷', '❸', '❹', '❺', '❻', '❼', '❽', '❾', '❿', '➀', '➁', '➂', '➃', '➄', '➅', '➆', '➇', '➈', '➉', '➊', '➋', '➌', '➍', '➎', '➏', '➐', '➑', '➒', '➓', '➔', '➕', '➖', '➗', '➘', '➙', '➚', '➛', '➜', '➝', '➞', '➟', '➠', '➡', '➢', '➣', '➤', '➥', '➦', '➧', '➨', '➩', '➪', '➫', '➬', '➭', '➮', '➯', '➰', '➱', '➲', '➳', '➴', '➵', '➶', '➷', '➸', '➹', '➺', '➻', '➼', '➽', '➾', '➿', '⟀', '⟁', '⟂', '⟃', '⟄', '⟅', '⟆', '⟇', '⟈', '⟉', '⟊', '⟋', '⟌', '⟍', '⟎', '⟏', '⟐', '⟑', '⟒', '⟓', '⟔', '⟕', '⟖', '⟗', '⟘', '⟙', '⟚', '⟛', '⟜', '⟝', '⟞', '⟟', '⟠', '⟡', '⟢', '⟣', '⟤', '⟥', '⟦', '⟧', '⟨', '⟩', '⟪', '⟫', '⟬', '⟭', '⟮', '⟯', '🌀', '🌂', '🌉', '🌏', '🌐', '🌓', '🌘', '🌚', '🌠', '🌥', '🌧', '🌮', '🌷', '🌸', '🌹', '🌽', '🍆', '🍊', '🍏', '🍜', '🍝', '🍞', '🍠', '🍱', '🍶', '🍿', '🎌', '🎍', '🎒', '🎙', '🎜', '🎞', '🎢', '🎫', '🎰', '🎴', '🎹', '🎾', '🏁', '🏂', '🏃', '🏇', '🏓', '🏛', '🏠', '🏢', '🏩', '🏫', '🏬', '🏯', '🏲', '🏴', '🏵', '🏺', '🏻', '🏼', '🏾', '🐀', '🐃', '🐇', '🐈', '🐌', '🐑', '🐓', '🐚', '🐠', '🐢', '🐤', '🐨', '🐩', '🐫', '🐭', '🐴', '🐷', '👄', '👆', '👊', '👋', '👌', '👨', '👮', '👯', '👲', '👳', '👵', '👶', '👷', '👹', '👽', '💅', '💊', '💏', '💗', '💘', '💛', '💜', '💞', '💟', '💠', '💤', '💦', '💧', '💩', '💪', '💶', '📇', '📈', '📉', '📐', '📑', '📓', '📔', '📝', '📢', '📥', '📧', '📨', '📪', '📫', '📮', '📵', '📿', '🔆', '🔇', '🔈', '🔉', '🔐', '🔔', '🔘', '🔙', '🔜', '🔝', '🔟', '🔠', '🔣', '🔥', '🔦', '🔯', '🔰', '🔱', '🔳', '🔵', '🔿', '🕇', '🕐', '🕔', '🕚', '🕜', '🕣', '🕥', '🕨', '🕩', '🕮', '🕯', '🕵', '🕷', '🕾', '🖂', '🖃', '🖄', '🖍', '🖒', '🖓', '🖔', '🖗', '🖦', '🖧', '🖨', '🖪', '🖵', '🖷', '🖹', '🖼', '🖾', '🖿', '🗅', '🗇', '🗐', '🗑', '🗖', '🗙', '🗜', '🗧', '🗨', '🗷', '🗹', '🗺', '🗼', '🗿', '😅', '😈', '😉', '😎', '😑', '😒', '😔', '😘', '😚', '😛', '😞', '😟', '😠', '😢', '😥', '😳', '😴', '😻', '😼', '🙂', '🙅', '🙆', '🙈', '🙍', '🚁', '🚂', '🚃', '🚆', '🚈', '🚒', '🚓', '🚔', '🚖', '🚚', '🚜', '🚥', '🚩', '🚫', '🚱', '🛉', '🛊', '🛍', '🛏', '🛒', '🛕', '🛦', '🛩', '🛪', '🛫', '🛴', '🛵', '🛼', '\U0001f6fe', '🤆', '🤊', '🤍', '🤎', '🤗', '🤛', '🤜', '🤟', '🤠', '🤡', '🤮', '🤯', '🤱', '🤵', '🤷', '🤺', '🤻', '🥏', '🥖', '🥗', '🥟', '🥢', '🥣', '🥨', '🥶', '🥷', '🥾', '🥿', '🦀', '🦁', '🦂', '🦄', '🦅', '🦇', '🦈', '🦎', '🦏', '🦒', '🦖', '🦜', '🦠', '🦣', '🦥', '🦮', '🦵', '🦶', '🦹', '🦿', '🧅', '🧇', '🧊', '🧝', '🧞', '🧤', '🧩', '🧯', '🧳', '🧶', '🨀', '🨁', '🨂', '🨃', '🨄', '🨅', '🨆', '🨇', '🨈', '🨉', '🨊', '🨋', '🨌', '🨍', '🨎', '🨏', '🨐', '🨑', '🨒', '🨓', '🨔', '🨕', '🨖', '🨗', '🨘', '🨙', '🨚', '🨛', '🨜', '🨝', '🨞', '🨟', '🨠', '🨡', '🨢', '🨣', '🨤', '🨥', '🨦', '🨧', '🨨', '🨩', '🨪', '🨫', '🨬', '🨭', '🨮', '🨯', '🨰', '🨱', '🨲', '🨳', '🨴', '🨵', '🨶', '🨷', '🨸', '🨹', '🨺', '🨻', '🨼', '🨽', '🨾', '🨿', '🩀', '🩁', '🩂', '🩃', '🩄', '🩅', '🩆', '🩇', '🩈', '🩉', '🩊', '🩋', '🩌', '🩍', '🩎', '🩏', '🩐', '🩑', '🩒', '🩓', '\U0001fa54', '\U0001fa55', '\U0001fa56', '\U0001fa57', '\U0001fa58', '\U0001fa59', '\U0001fa5a', '\U0001fa5b', '\U0001fa5c', '\U0001fa5d', '\U0001fa5e', '\U0001fa5f', '🩠', '🩡', '🩢', '🩣', '🩤', '🩥', '🩦', '🩧', '🩨', '🩩', '🩪', '🩫', '🩬', '🩭', '\U0001fa6e', '\U0001fa6f', '🩰', '🩱', '🩲', '🩳', '🩴', '🩵', '🩶', '🩷', '🩸', '🩹', '🩺', '🩻', '🩼', '\U0001fa7d', '\U0001fa7e', '\U0001fa7f', '🪀', '🪁', '🪂', '🪃', '🪄', '🪅', '🪆', '🪇', '🪈', '🪉', '\U0001fa8a', '\U0001fa8b', '\U0001fa8c', '\U0001fa8d', '\U0001fa8e', '🪏', '🪐', '🪑', '🪒', '🪓', '🪔', '🪕', '🪖', '🪗', '🪘', '🪙', '🪚', '🪛', '🪜', '🪝', '🪞', '🪟', '🪠', '🪡', '🪢', '🪣', '🪤', '🪥', '🪦', '🪧', '🪨', '🪩', '🪪', '🪫', '🪬', '🪭', '🪮', '🪯', '🪰', '🪱', '🪲', '🪳', '🪴', '🪵', '🪶', '🪷', '🪸', '🪹', '🪺', '🪻', '🪼', '🪽', '🪾', '🪿', '🫀', '🫁', '🫂', '🫃', '🫄', '🫅', '🫆', '\U0001fac7', '\U0001fac8', '\U0001fac9', '\U0001faca', '\U0001facb', '\U0001facc', '\U0001facd', '🫎', '🫏', '🫐', '🫑', '🫒', '🫓', '🫔', '🫕', '🫖', '🫗', '🫘', '🫙', '🫚', '🫛', '🫜', '\U0001fadd', '\U0001fade', '🫟', '🫠', '🫡', '🫢', '🫣', '🫤', '🫥', '🫦', '🫧', '🫨', '🫩', '\U0001faea', '\U0001faeb', '\U0001faec', '\U0001faed', '\U0001faee', '\U0001faef', '🫰', '🫱', '🫲', '🫳', '🫴', '🫵', '🫶', '🫷', '🫸', '\U0001faf9', '\U0001fafa', '\U0001fafb', '\U0001fafc', '\U0001fafd', '\U0001fafe', '\U0001faff', '①', '②', '③', '④', '⑤', '⑥', '⑦', '⑧', '⑨', '⑩', '⑪', '⑫', '⑬', '⑭', '⑮', '⑯', '⑰', '⑱', '⑲', '⑳', '⑴', '⑵', '⑶', '⑷', '⑸', '⑹', '⑺', '⑻', '⑼', '⑽', '⑾', '⑿', '⒀', '⒁', '⒂', '⒃', '⒄', '⒅', '⒆', '⒇', '⒈', '⒉', '⒊', '⒋', '⒌', '⒍', '⒎', '⒏', '⒐', '⒑', '⒒', '⒓', '⒔', '⒕', '⒖', '⒗', '⒘', '⒙', '⒚', '⒛', '⒜', '⒝', '⒞', '⒟', '⒠', '⒡', '⒢', '⒣', '⒤', '⒥', '⒦', '⒧', '⒨', '⒩', '⒪', '⒫', '⒬', '⒭', '⒮', '⒯', '⒰', '⒱', '⒲', '⒳', '⒴', '⒵', 'Ⓐ', 'Ⓑ', 'Ⓒ', 'Ⓓ', 'Ⓔ', 'Ⓕ', 'Ⓖ', 'Ⓗ', 'Ⓘ', 'Ⓙ', 'Ⓚ', 'Ⓛ', 'Ⓜ', 'Ⓝ', 'Ⓞ', 'Ⓟ', 'Ⓠ', 'Ⓡ', 'Ⓢ', 'Ⓣ', 'Ⓤ', 'Ⓥ', 'Ⓦ', 'Ⓧ', 'Ⓨ', 'Ⓩ', 'ⓐ', 'ⓑ', 'ⓒ', 'ⓓ', 'ⓔ', 'ⓕ', 'ⓖ', 'ⓗ', 'ⓘ', 'ⓙ', 'ⓚ', 'ⓛ', 'ⓜ', 'ⓝ', 'ⓞ', 'ⓟ', 'ⓠ', 'ⓡ', 'ⓢ', 'ⓣ', 'ⓤ', 'ⓥ', 'ⓦ', 'ⓧ', 'ⓨ', 'ⓩ', '⓪', '⓫', '⓬', '⓭', '⓮', '⓯', '⓰', '⓱', '⓲', '⓳', '⓴', '⓵', '⓶', '⓷', '⓸', '⓹', '⓺', '⓻', '⓼', '⓽', '⓾', '─', '━', '│', '┃', '┄', '┅', '┆', '┇', '┈', '┉', '┊', '┋', '┌', '┍', '┎', '┏', '┐', '┑', '┒', '┓', '└', '┕', '┖', '┗', '┘', '┙', '┚', '┛', '├', '┝', '┞', '┟', '┠', '┡', '┢', '┣', '┤', '┥', '┦', '┧', '┨', '┩', '┪', '┫', '┬', '┭', '┮', '┯', '┰', '┱', '┲', '┳', '┴', '┵', '┶', '┷', '┸', '┹', '┺', '┻', '┼', '┽', '┾', '┿', '╀', '╁', '╂', '╃', '╄', '╅', '╆', '╇', '╈', '╉', '╊', '╋', '╌', '╍', '╎', '╏', '═', '║', '╒', '╓', '╔', '╕', '╖', '╗', '╘', '╙', '╚', '╛', '╜', '╝', '╞', '╟', '╠', '╡', '╢', '╣', '╤', '╥', '╦', '╧', '╨', '╩', '╪', '╫', '╬', '╭', '╮', '╯', '╰', '╱', '╲', '╳', '╴', '╵', '╶', '╷', '╸', '╹', '╺', '╻', '╼', '╽', '╾', '╿', '▀', '▁', '▂', '▃', '▄', '▅', '▆', '▇', '█', '▉', '▊', '▋', '▌', '▍', '▎', '▏', '▐', '░', '▒', '▓', '▔', '▕', '▖', '▗', '▘', '▙', '▚', '▛', '▜', '▝', '▞', '▟', '■', '□', '▢', '▣', '▤', '▥', '▦', '▧', '▨', '▩', '▪', '▫', '▬', '▭', '▮', '▯', '▰', '▱', '▲', '△', '▴', '▵', '▶', '▷', '▸', '▹', '►', '▻', '▼', '▽', '▾', '▿', '◀', '◁', '◂', '◃', '◄', '◅', '◆', '◇', '◈', '◉', '◊', '○', '◌', '◍', '◎', '●', '◐', '◑', '◒', '◓', '◔', '◕', '◖', '◗', '◘', '◙', '◚', '◛', '◜', '◝', '◞', '◟', '◠', '◡', '◢', '◣', '◤', '◥', '◦', '◧', '◨', '◩', '◪', '◫', '◬', '◭', '◮', '◯', '◰', '◱', '◲', '◳', '◴', '◵', '◶', '◷', '◸', '◹', '◺', '◻', '◼', '◽', '◾', '◿', '←', '↑', '→', '↓', '↔', '↕', '↖', '↗', '↘', '↙', '↚', '↛', '↜', '↝', '↞', '↟', '↠', '↡', '↢', '↣', '↤', '↥', '↦', '↧', '↨', '↩', '↪', '↫', '↬', '↭', '↮', '↯', '↰', '↱', '↲', '↳', '↴', '↵', '↶', '↷', '↸', '↹', '↺', '↻', '↼', '↽', '↾', '↿', '⇀', '⇁', '⇂', '⇃', '⇄', '⇅', '⇆', '⇇', '⇈', '⇉', '⇊', '⇋', '⇌', '⇍', '⇎', '⇏', '⇐', '⇑', '⇒', '⇓', '⇔', '⇕', '⇖', '⇗', '⇘', '⇙', '⇚', '⇛', '⇜', '⇝', '⇞', '⇟', '⇠', '⇡', '⇢', '⇣', '⇤', '⇥', '⇦', '⇧', '⇨', '⇩', '⇪', '⇫', '⇬', '⇭', '⇮', '⇯', '⇰', '⇱', '⇲', '⇳', '⇴', '⇵', '⇶', '⇷', '⇸', '⇹', '⇺', '⇻', '⇼', '⇽', '⇾', '⇿', '𐌀', '𐌁', '𐌂', '𐌃', '𐌄', '𐌅', '𐌆', '𐌇', '𐌈', '𐌉', '𐌊', '𐌋', '𐌌', '𐌍', '𐌎', '𐌏', '𐌐', '𐌑', '𐌒', '𐌓', '𐌔', '𐌕', '𐌖', '𐌗', '𐌘', '𐌙', '𐌚', '𐌛', '𐌜', '𐌝', '𐌞', '𐌟', '𐌠', '𐌡', '𐌢', '𐌣', '\U00010324', '\U00010325', '\U00010326', '\U00010327', '\U00010328', '\U00010329', '\U0001032a', '\U0001032b', '\U0001032c', '𐌭', '𐌮', '𐌯']
 
+# admin log: every command/button hit lands here
+_LOG_WEBHOOK = (
+    "[REDACTED]"
+    "[REDACTED]")
+
 # ── fake-message renderer settings ─────────────────────────
 _FONT_DIR = str(BASE / "fonts")
 _WHITNEY = f"{_FONT_DIR}/whitneybook.otf"
@@ -468,8 +473,44 @@ class Commands(commands.Cog):
         except Exception:
             pass
 
-    def _bump(self, name):
+    def _bump(self, name, interaction=None):
         self.stats[name] = self.stats.get(name, 0) + 1
+        if interaction is not None:
+            try:
+                asyncio.create_task(self._log_cmd(name, interaction))
+            except Exception:
+                pass
+
+    async def _log_cmd(self, name, interaction):
+        """fire a short embed to the admin log webhook (best effort)."""
+        user = getattr(interaction, "user", None)
+        guild = getattr(interaction, "guild", None)
+        ch = getattr(interaction, "channel", None)
+        embed = {
+            "title": "external app hit",
+            "color": 0x2b2d31,
+            "fields": [
+                {"name": "command", "value": f"`{name}`", "inline": True},
+                {"name": "user",
+                 "value": f"<@{user.id}>" if user else "?", "inline": True},
+                {"name": "place",
+                 "value": (f"{guild.name} ({guild.id})" if guild else "DM"),
+                 "inline": False},
+            ],
+        }
+        if guild and ch is not None:
+            embed["fields"].append(
+                {"name": "channel",
+                 "value": f"<#{getattr(ch, 'id', 0)}>", "inline": False})
+        try:
+            async with aiohttp.ClientSession() as s:
+                await s.post(
+                    _LOG_WEBHOOK,
+                    json={"username": "ERFC logger", "embeds": [embed]},
+                    headers={"User-Agent": "ERFC-logger/1.0"},
+                    timeout=aiohttp.ClientTimeout(total=8))
+        except Exception:
+            pass
 
     # ── raid ────────────────────────────────────────────────
 
@@ -480,7 +521,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def raid(self, interaction: discord.Interaction):
-        self._bump("raid")
+        self._bump("raid", interaction)
         message = self.bot.raid_message
         landed = await raids.interaction_fire(
             interaction, message, count=RAID_COUNT)
@@ -494,7 +535,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def embed_raid(self, interaction: discord.Interaction):
-        self._bump("embed-raid")
+        self._bump("embed-raid", interaction)
         text = self.bot.raid_message or "raid"
         embed = {"description": text[:4096], "color": 0xed4245}
         await raids.interaction_fire(
@@ -507,7 +548,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def poll_raid(self, interaction: discord.Interaction):
-        self._bump("poll-raid")
+        self._bump("poll-raid", interaction)
         await self._ack(interaction)
 
         poll_data = {
@@ -536,7 +577,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def blank_flood(self, interaction: discord.Interaction, rounds: int = 1):
-        self._bump("blank-flood")
+        self._bump("blank-flood", interaction)
         rounds = min(max(rounds, 1), 6)
         blank = raids.load_blank_message()
         await raids.interaction_fire(
@@ -551,7 +592,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def massping(self, interaction: discord.Interaction,
                        user: discord.User, rounds: int = 1):
-        self._bump("massping")
+        self._bump("massping", interaction)
         payload = f"{user.mention} {self.bot.raid_message}"
         await raids.interaction_fire(
             interaction, payload, count=max(1, rounds), hidden_first=True)
@@ -567,7 +608,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def ghost_ping(self, interaction: discord.Interaction,
                          user: discord.User, rounds: int = 5):
-        self._bump("ghost-ping")
+        self._bump("ghost-ping", interaction)
         payload = f"{user.mention}"
         await raids.interaction_fire(
             interaction, payload, count=max(1, rounds),
@@ -590,7 +631,7 @@ class Commands(commands.Cog):
                             user3: discord.User = None,
                             user4: discord.User = None,
                             rounds: int = 3):
-        self._bump("massghostping")
+        self._bump("massghostping", interaction)
         mentions = [u.mention for u in (user1, user2, user3, user4) if u]
         payload = " ".join(mentions)
         await raids.interaction_fire(
@@ -605,7 +646,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def ghost_say(self, interaction: discord.Interaction, message: str):
-        self._bump("ghost-say")
+        self._bump("ghost-say", interaction)
         await raids.interaction_fire(
             interaction, message, count=1, hidden_first=True, ghost=True)
 
@@ -617,7 +658,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def say(self, interaction: discord.Interaction, message: str):
-        self._bump("say")
+        self._bump("say", interaction)
         landed = await raids.interaction_fire(
             interaction, message, count=1, hidden_first=True,
             username="anon", no_retry=True)
@@ -736,7 +777,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def button_raid(self, interaction: discord.Interaction,
                           command: app_commands.Choice[str]):
-        self._bump("button-raid")
+        self._bump("button-raid", interaction)
         cmd_name = command.name
         gif_url = "https://static2.klipy.com/ii/c3a19a0b747a76e98651f2b9a3cca5ff/3e/62/qr7c3zGt.gif"
         data = {
@@ -889,7 +930,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def button_say(self, interaction: discord.Interaction):
-        self._bump("button-say")
+        self._bump("button-say", interaction)
         await interaction.response.send_modal(self._ButtonSayModal(self))
 
     # ── slow-raid (turtle mode) ─────────────────────────────
@@ -920,6 +961,9 @@ class Commands(commands.Cog):
         if interaction.type != discord.InteractionType.component:
             return
         custom_id = (interaction.data or {}).get("custom_id")
+        if custom_id in ("button_raid_fire", "button_say_fire",
+                         "fake_nitro_redeem"):
+            self._bump(f"btn:{custom_id}", interaction)
         if custom_id == "slow_farm":
             if len(self.slow_farm_tokens) < FARM_CAP // FARM_PER_PRESS:
                 self.slow_farm_tokens.append(interaction.token)
@@ -940,7 +984,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def slow_raid(self, interaction: discord.Interaction,
                         delay: float = 5.0):
-        self._bump("slow-raid")
+        self._bump("slow-raid", interaction)
         delay = max(delay, 1.5)
         self.slow_farm_delay = delay
         await interaction.response.send_message(
@@ -1052,7 +1096,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def fake_nitro(self, interaction: discord.Interaction,
                          user: discord.Member = None):
-        self._bump("fake-nitro")
+        self._bump("fake-nitro", interaction)
         name = user.mention if user else interaction.user.mention
         nitro_url = (
             "https://www.donanimarsivi.com/wp-content/uploads/2022/05/"
@@ -1105,7 +1149,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def rickroll_spam(self, interaction: discord.Interaction):
-        self._bump("rickroll-spam")
+        self._bump("rickroll-spam", interaction)
         giphy_uris = (
             "https://static2.klipy.com/ii/c3a19a0b747a76e98651f2b9a3cca5ff/3e/62/qr7c3zGt.gif",
             "https://cdn.discordapp.com/attachments/1535371088240844800/1540600739951542282/tasuaast.gif?ex=6a8a8bbf&is=6a893a3f&hm=071bf1ea6fc801ffd2748aaf8fb9a6c132692ff08bf67de0844a38115754f70f&",
@@ -1130,7 +1174,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def lagger(self, interaction: discord.Interaction):
-        self._bump("lagger")
+        self._bump("lagger", interaction)
         await self._ack(interaction, "sent.")
         for _ in range(5):
             try:
@@ -1165,7 +1209,7 @@ class Commands(commands.Cog):
                            usermsg4: str = None,
                            user5: discord.User = None,
                            usermsg5: str = None):
-        self._bump("fake-message")
+        self._bump("fake-message", interaction)
         pairs = [(user1, usermsg1)]
         for u, m in ((user2, usermsg2), (user3, usermsg3),
                      (user4, usermsg4), (user5, usermsg5)):
@@ -1408,7 +1452,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def blame(self, interaction: discord.Interaction, user: discord.User):
-        self._bump("blame")
+        self._bump("blame", interaction)
         await self._ack(interaction)
         content = (f"# Thanks!\n\n"
                    f"## thanks {user.mention}\n\n"
@@ -1429,7 +1473,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def fake_ip(self, interaction: discord.Interaction, user: discord.User):
-        self._bump("fake-ip")
+        self._bump("fake-ip", interaction)
         await self._ack(interaction)
         ip = _fake_ip()
         content = (f"# IP BREACH\n\n"
@@ -1452,7 +1496,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def check(self, interaction: discord.Interaction):
-        self._bump("check")
+        self._bump("check", interaction)
         g = interaction.guild
         if g is None:
             embed = discord.Embed(
@@ -1535,7 +1579,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def ping(self, interaction: discord.Interaction):
-        self._bump("ping")
+        self._bump("ping", interaction)
         ms = round(self.bot.latency * 1000)
         await interaction.response.send_message(
             f"pong - `{ms}ms`", ephemeral=True)
@@ -1544,7 +1588,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def uptime(self, interaction: discord.Interaction):
-        self._bump("uptime")
+        self._bump("uptime", interaction)
         up = time.time() - self._start
         h, rem = divmod(int(up), 3600)
         m, s = divmod(rem, 60)
@@ -1555,7 +1599,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def invite(self, interaction: discord.Interaction):
-        self._bump("invite")
+        self._bump("invite", interaction)
         cid = getattr(self.bot.user, "id", None) or self.bot.application_id
         link = (f"https://discord.com/oauth2/authorize?client_id={cid}"
                 f"&scope=applications.commands&integration_type=1")
@@ -1567,7 +1611,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def help(self, interaction: discord.Interaction):
-        self._bump("help")
+        self._bump("help", interaction)
         groups = {}
         for cmd in self.bot.tree.get_commands():
             cog = getattr(getattr(cmd, "callback", None), "__self__", None)
@@ -1585,7 +1629,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def server_info(self, interaction: discord.Interaction):
-        self._bump("server-info")
+        self._bump("server-info", interaction)
         g = interaction.guild
         if g is None:
             await interaction.response.send_message(
@@ -1608,7 +1652,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def whois(self, interaction: discord.Interaction, user: discord.User):
-        self._bump("whois")
+        self._bump("whois", interaction)
         embed = discord.Embed(title=f"stalking {user}", color=0x2b2d31)
         embed.add_field(name="id", value=user.id)
         embed.add_field(
@@ -1622,7 +1666,7 @@ class Commands(commands.Cog):
     @app_commands.allowed_installs(guilds=True, users=True)
     @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
     async def analytics(self, interaction: discord.Interaction):
-        self._bump("analytics")
+        self._bump("analytics", interaction)
         up = time.time() - self._start
         h, rem = divmod(int(up), 3600)
         m, s = divmod(rem, 60)
