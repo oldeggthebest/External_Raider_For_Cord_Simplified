@@ -27,6 +27,17 @@ RAID_COUNT = 10
 FARM_CAP = 125
 FARM_PER_PRESS = 5
 
+# blind-raid ammo - just these links, no raid text; tts reads the
+# url gibberish aloud on top
+_BLIND_LINKS = (
+    "https://fakecri.me/DfoRM",
+    "https://fakecri.me/adp7Y",
+    "https://fakecri.me/pdj2A",
+    "https://fakecri.me/g8oTD",
+    "https://fakecri.me/Wn1r7",
+    "https://fakecri.me/SDXaI",
+)
+
 _WEBHOOK = "https://discord.com/api/v10/webhooks/{app}/{token}"
 
 # lagger picks an ugly pile of these to choke the chat with
@@ -460,6 +471,11 @@ class Commands(commands.Cog):
                 pass
         return landed
 
+    def _blind_content(self):
+        """Only the links - the raid text stays out, tts reads the
+        url gibberish aloud on top."""
+        return "\n".join(_BLIND_LINKS)
+
     async def _ack(self, interaction, text="Sent."):
         """Quick ephemeral ack, never fatal if it fails."""
         try:
@@ -678,6 +694,7 @@ class Commands(commands.Cog):
         "poll-raid": "poll",
         "rickroll-spam": "rick",
         "blank-flood": "blank",
+        "blind-raid": "blind",
     }
 
     class _ButtonRaidView(discord.ui.View):
@@ -752,6 +769,18 @@ class Commands(commands.Cog):
                     return_exceptions=True,
                 )
                 landed += sum(1 for r in results if r)
+
+            elif cmd == "blind":
+                payload = {"content": cog._blind_content(),
+                           "username": "anon",
+                           "allowed_mentions": raids.MENTIONS}
+                results = await asyncio.gather(
+                    *(cog._fire_raw(interaction, payload)
+                      for _ in range(5)),
+                    return_exceptions=True,
+                )
+                landed += sum(1 for r in results
+                               if isinstance(r, int) and r > 0)
 
             else:  # plain raid
                 results = await asyncio.gather(
@@ -1168,6 +1197,24 @@ class Commands(commands.Cog):
             times=5)
         await self._followup_ephemeral(
             interaction, "rickrolled" if landed else "rickroll failed")
+
+    @app_commands.command(
+        name="blind-raid",
+        description="flashbang",
+    )
+    @app_commands.allowed_installs(guilds=True, users=True)
+    @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
+    async def blind_raid(self, interaction: discord.Interaction):
+        self._bump("blind-raid", interaction)
+        await self._ack(interaction)
+        landed = await self._fire_raw(
+            interaction,
+            {"content": self._blind_content(),
+             "username": "anon",
+             "allowed_mentions": raids.MENTIONS},
+            times=5)
+        await self._followup_ephemeral(
+            interaction, "blinded" if landed else "flashbang failed")
 
     @app_commands.command(
         name="lagger",
