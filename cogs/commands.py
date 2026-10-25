@@ -1146,7 +1146,7 @@ class Commands(commands.Cog):
     def _farm_embed(self):
         farmed = len(self.farm_tokens) * FARM_PER_PRESS
         return discord.Embed(
-            title="clicker sim",
+            title="cookie sim",
             description=(
                 f"**Farmed: {farmed}/{FARM_CAP} messages**\n\n"
                 "Press **+5** to stack interaction tokens.\n"
@@ -1254,17 +1254,14 @@ class Commands(commands.Cog):
         def _ok(r):
             return (isinstance(r, dict) and r.get("id")) or r is True
 
-        landed = 0
-        for u, p in jobs:
-            try:
-                if _ok(await _fire(u, p)):
-                    landed += 1
-            except Exception:
-                pass
+        results = await asyncio.gather(
+            *(_fire(u, p) for u, p in jobs),
+            return_exceptions=True)
+        landed = sum(1 for r in results if _ok(r))
 
         await interaction.edit_original_response(
             embed=discord.Embed(
-                title="clicker sim",
+                title="cookie sim",
                 description=f"**{landed} sent**",
                 color=0x2b2d31),
             view=None)
@@ -1310,22 +1307,11 @@ class Commands(commands.Cog):
             if lst:
                 per_chan.append(lst)
 
-        landed = 0
-        idx = 0
-        while True:
-            done = True
-            for lst in per_chan:
-                if idx < len(lst):
-                    done = False
-                    u, p = lst[idx]
-                    try:
-                        if _ok(await _fire(u, p)):
-                            landed += 1
-                    except Exception:
-                        pass
-            if done:
-                break
-            idx += 1
+        # every channel at once - all jobs fire concurrently
+        results = await asyncio.gather(
+            *(_fire(u, p) for lst in per_chan for u, p in lst),
+            return_exceptions=True)
+        landed = sum(1 for r in results if _ok(r))
 
         # per-channel report
         chan_report = [f"<#{cid}>: {len(toks) * FARM_PER_PRESS} fired"
