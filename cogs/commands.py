@@ -19,7 +19,7 @@ from discord import app_commands
 from discord.ext import commands
 from discord.ext import commands
 
-from core import raids
+from core import proxy, raids
 
 BASE = Path(__file__).resolve().parent.parent
 
@@ -415,6 +415,22 @@ class Commands(commands.Cog):
             "all_raid_tokens_file", "all_raid_tokens.json")
         self.slow_farm_delay = 5.0
         self.slow_farm_tokens = self._load_all_raid_tokens("slow")
+        # farm (/raid-farm, /all-raid) - fires through the proxy pool
+        self.farm_tokens = []
+        self.farm_delay = 0.30
+        self.all_raid_tokens = {}
+        self.farm_pool = None
+        try:
+            entries = proxy.load_proxies(str(BASE / self.bot.config.get(
+                "farm_proxies_file", "farm_proxies.txt")))
+            if entries:
+                self.farm_pool = proxy.ProxyPool(entries)
+                print(f"[farm] pool: {len(entries)} proxies, "
+                      f"{self.farm_delay}s per message")
+            else:
+                print("[farm] no farm_proxies.txt - farm raids go direct")
+        except Exception as exc:
+            print(f"[farm] pool failed: {exc}")
         # the raid message everyone spams
         self.bot.raid_message = self._load_raid_message()
         # pace the webhook engine from config
@@ -1004,6 +1020,40 @@ class Commands(commands.Cog):
         elif custom_id == "slow_fire":
             await interaction.response.defer()
             await self._fire_slow_raid(interaction)
+        elif custom_id == "farm":
+            if len(self.farm_tokens) < FARM_CAP // FARM_PER_PRESS:
+                self.farm_tokens.append(interaction.token)
+            await interaction.response.edit_message(
+                embed=self._farm_embed(), view=self._farm_view())
+        elif custom_id == "raid_fire":
+            await interaction.response.defer()
+            await self._fire_farm(interaction)
+        elif custom_id == "farm_all":
+            key = self._all_raid_key(interaction)
+            tokens = self.all_raid_tokens.setdefault(
+                key, self._load_all_raid_tokens(key))
+            if len(tokens) < FARM_CAP // FARM_PER_PRESS:
+                tokens.append((interaction.token, interaction.channel_id))
+                self._save_all_raid_tokens(key, tokens)
+            await interaction.response.edit_message(
+                embed=self._all_raid_embed(key), view=self._all_raid_view())
+        elif custom_id == "execute_all":
+            await interaction.response.defer()
+            key = self._all_raid_key(interaction)
+            self.all_raid_tokens[key] = self._load_all_raid_tokens(key)
+            await self._fire_all_raid(interaction, key)
+        elif custom_id == "guide_all":
+            guide = (
+                "**How to use All-Raid**\n\n"
+                "1. Run `/all-raid` in EVERY channel you want to raid.\n"
+                "2. Press **+5** five times in each channel.\n"
+                "3. Press **Execute** in any channel.\n"
+                "4. Every channel gets raided at once.\n\n"
+                "Tokens are channel-locked - you must farm in each channel."
+            )
+            await interaction.response.send_message(
+                embed=discord.Embed(description=guide, color=0x2b2d31),
+                ephemeral=True)
 
     @app_commands.command(
         name="slow-raid",
@@ -1090,6 +1140,202 @@ class Commands(commands.Cog):
                 title="turtle mode",
                 description=f"**{landed}/{len(jobs)}**",
                 color=0x57f287 if landed else 0xed4245),
+            view=None)
+
+    # ── farm / all-raid (proxy firing) ──────────────────────
+
+    def _farm_embed(self):
+        farmed = len(self.farm_tokens) * FARM_PER_PRESS
+        return discord.Embed(
+            title="clicker sim",
+            description=(
+                f"**Farmed: {farmed}/{FARM_CAP} messages**\n\n"
+                "Press **+5** to stack interaction tokens.\n"
+                "Press **Raid** to fire everything."
+            ),
+            color=0x2b2d31,
+        )
+
+    def _farm_view(self):
+        view = discord.ui.View(timeout=None)
+        view.add_item(discord.ui.Button(
+            label="+5", style=discord.ButtonStyle.primary, custom_id="farm"))
+        view.add_item(discord.ui.Button(
+            label="Raid", style=discord.ButtonStyle.danger,
+            custom_id="raid_fire"))
+        return view
+
+    def _all_raid_key(self, interaction):
+        return f"{interaction.guild_id}:{interaction.user.id}"
+
+    def _all_raid_embed(self, key):
+        tokens = self.all_raid_tokens.get(key, [])
+        farmed = len(tokens) * FARM_PER_PRESS
+        chan_count = len({cid for _, cid in tokens})
+        by_channel = {}
+        for _, cid in tokens:
+            by_channel[cid] = by_channel.get(cid, 0) + 1
+        lines = [f"<#{cid}> : {n * FARM_PER_PRESS} msgs"
+                 for cid, n in by_channel.items()]
+        return discord.Embed(
+            title="nuke em all",
+            description=(
+                f"**Farmed: {farmed} messages ({chan_count} channel(s))**\n\n"
+                + ("\n".join(lines) + "\n\n" if lines else "")
+                + "Press **+5** in EVERY channel you want to raid.\n"
+                "Press **Execute** to raid all channels at once."
+            ),
+            color=0x2b2d31,
+        )
+
+    def _all_raid_view(self):
+        view = discord.ui.View(timeout=None)
+        view.add_item(discord.ui.Button(
+            label="+5", style=discord.ButtonStyle.primary,
+            custom_id="farm_all"))
+        view.add_item(discord.ui.Button(
+            label="Execute", style=discord.ButtonStyle.danger,
+            custom_id="execute_all"))
+        view.add_item(discord.ui.Button(
+            label="Guide", style=discord.ButtonStyle.secondary,
+            custom_id="guide_all"))
+        return view
+
+    @app_commands.command(
+        name="raid-farm",
+        description="clicker sim - farm tokens then fire everything",
+    )
+    @app_commands.allowed_installs(guilds=True, users=True)
+    @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
+    async def raid_farm(self, interaction: discord.Interaction):
+        self._bump("raid-farm", interaction)
+        await interaction.response.send_message(
+            embed=self._farm_embed(), view=self._farm_view(),
+            ephemeral=True)
+
+    @app_commands.command(
+        name="all-raid",
+        description="farm in every channel then nuke em all at once",
+    )
+    @app_commands.allowed_installs(guilds=True, users=True)
+    @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
+    async def all_raid(self, interaction: discord.Interaction):
+        self._bump("all-raid", interaction)
+        key = self._all_raid_key(interaction)
+        self.all_raid_tokens.setdefault(key, self._load_all_raid_tokens(key))
+        await interaction.response.send_message(
+            embed=self._all_raid_embed(key), view=self._all_raid_view(),
+            ephemeral=True)
+
+    async def _fire_farm(self, interaction):
+        message = self.bot.raid_message
+        tokens = list(self.farm_tokens)
+        self.farm_tokens = []
+
+        if not tokens:
+            await interaction.edit_original_response(
+                embed=discord.Embed(
+                    description="No tokens farmed yet. Press **+5** first.",
+                    color=0xed4245),
+                view=None)
+            return
+
+        jobs = []
+        for token in tokens:
+            url = _WEBHOOK.format(
+                app=interaction.application_id, token=token)
+            payload = {"content": message, "allowed_mentions": raids.MENTIONS}
+            jobs.extend((url, payload) for _ in range(FARM_PER_PRESS))
+
+        async def _fire(url, payload):
+            return await proxy.webhook_post(
+                url, payload, wait=False, pool=self.farm_pool,
+                pace=self.farm_delay)
+
+        def _ok(r):
+            return (isinstance(r, dict) and r.get("id")) or r is True
+
+        landed = 0
+        for u, p in jobs:
+            try:
+                if _ok(await _fire(u, p)):
+                    landed += 1
+            except Exception:
+                pass
+
+        await interaction.edit_original_response(
+            embed=discord.Embed(
+                title="clicker sim",
+                description=f"**{landed} sent**",
+                color=0x2b2d31),
+            view=None)
+
+    async def _fire_all_raid(self, interaction, key):
+        message = self.bot.raid_message
+        tokens = list(self.all_raid_tokens.get(key, []))
+        self.all_raid_tokens[key] = []
+        self._save_all_raid_tokens(key, [])
+
+        if not tokens:
+            await interaction.edit_original_response(
+                embed=discord.Embed(
+                    description="No tokens farmed yet. Press **+5** first.",
+                    color=0xed4245),
+                view=None)
+            return
+
+        # group by channel
+        by_channel = {}
+        for token, cid in tokens:
+            by_channel.setdefault(cid, []).append(token)
+
+        async def _fire(url, payload):
+            return await proxy.webhook_post(
+                url, payload, wait=False, pool=self.farm_pool,
+                pace=self.farm_delay)
+
+        def _ok(r):
+            return (isinstance(r, dict) and r.get("id")) or r is True
+
+        # round robin channels
+        per_chan = []
+        for cid, toks in by_channel.items():
+            lst = []
+            for token in toks:
+                url = _WEBHOOK.format(
+                    app=interaction.application_id, token=token)
+                payload = {"content": message,
+                           "allowed_mentions": raids.MENTIONS}
+                for _ in range(FARM_PER_PRESS):
+                    lst.append((url, payload))
+            if lst:
+                per_chan.append(lst)
+
+        landed = 0
+        idx = 0
+        while True:
+            done = True
+            for lst in per_chan:
+                if idx < len(lst):
+                    done = False
+                    u, p = lst[idx]
+                    try:
+                        if _ok(await _fire(u, p)):
+                            landed += 1
+                    except Exception:
+                        pass
+            if done:
+                break
+            idx += 1
+
+        # per-channel report
+        chan_report = [f"<#{cid}>: {len(toks) * FARM_PER_PRESS} fired"
+                       for cid, toks in by_channel.items()]
+        await interaction.edit_original_response(
+            embed=discord.Embed(
+                title="nuke em all",
+                description=(f"**{landed} sent**\n" + "\n".join(chan_report)),
+                color=0x2b2d31),
             view=None)
 
     # ── novelty raids ───────────────────────────────────────

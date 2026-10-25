@@ -15,8 +15,12 @@ A external raid bot
 
 | Category | Commands |
 |---|---|
-| Raid | `raid`, `embed-raid`, `poll-raid`, `button-raid`, `slow-raid`, `blank-flood` |
+| Raid | `raid`, `embed-raid`, `poll-raid`, `button-raid`, `slow-raid`, `blank-flood`, `raid-farm`, `all-raid` |
 | Spam & ghost | `massping`, `ghost-ping`, `massghostping`, `say`, `ghost-say`, `button-say`, `fake-nitro`, `rickroll-spam`, `lagger`, `fake-message` |
 | Tools | `ping`, `uptime`, `invite`, `help`, `server-info`, `whois`, `check`, `blame`, `fake-ip`, `analytics` |
 
 yea i used ai don min it
+
+---
+
+**Note:** for farming commands like `/raid-farm` and `/all-raid` you need proxies. Drop your list in `farm_proxies.txt` (one per line, `ip:port:user:pass`) — without it they fire direct from your host IP.

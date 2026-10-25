@@ -1,5 +1,6 @@
-.env
+# proxies and runtime state never go public
+farm_proxies.txt
+all_raid_tokens.json
 __pycache__/
 *.pyc
-core/blank_mesg.txt
-.directory
+.env
