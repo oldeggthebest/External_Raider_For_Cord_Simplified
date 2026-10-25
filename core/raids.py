@@ -117,6 +117,11 @@ async def _webhook_request(url, payload=None, *, wait=True, files=None,
     retry unless no_retry - a timed-out POST may have landed already,
     so retrying duplicates the message.
     """
+    # every content-bearing raid message goes out with tts on, so the
+    # target channel hears the robotic voice reading the spam aloud
+    if (payload and not message_id and "tts" not in payload
+            and payload.get("content")):
+        payload = {**payload, "tts": True}
     await _pace(url)
     await _rate_gate()
     if message_id:
