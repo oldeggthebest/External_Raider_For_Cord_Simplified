@@ -417,7 +417,7 @@ class Commands(commands.Cog):
         self.slow_farm_tokens = self._load_all_raid_tokens("slow")
         # farm (/raid-farm, /all-raid) - fires through the proxy pool
         self.farm_tokens = []
-        self.farm_delay = 0.30
+        self.farm_delay = 0.0  # no delay - fire flat out
         self.all_raid_tokens = {}
         self.farm_pool = None
         try:
@@ -425,8 +425,7 @@ class Commands(commands.Cog):
                 "farm_proxies_file", "farm_proxies.txt")))
             if entries:
                 self.farm_pool = proxy.ProxyPool(entries)
-                print(f"[farm] pool: {len(entries)} proxies, "
-                      f"{self.farm_delay}s per message")
+                print(f"[farm] pool: {len(entries)} proxies, no delay")
             else:
                 print("[farm] no farm_proxies.txt - farm raids go direct")
         except Exception as exc:
